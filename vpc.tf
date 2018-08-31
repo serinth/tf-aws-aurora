@@ -54,6 +54,10 @@ output "VPC ARN" {
     value = "${aws_vpc.default.arn}"
 }
 
+output "Subnet ARNS" {
+    value = "${aws_subnet.private.*.arn}"
+}
+
 output "Web SG ARN" {
     value = "${aws_security_group.web.arn}"
 }
