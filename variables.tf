@@ -7,7 +7,7 @@ variable "aws_profile" {
 
 variable "namespace" {
     description = "AWS resource namespacing"
-    default = "opensc"
+    default = "myproject"
 }
 
 variable "aws_region" {
