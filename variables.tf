@@ -26,7 +26,7 @@ variable "nat_instance_type" {
 
 variable "namespace" {
     description = "AWS resource namespacing"
-    default = "mynamespace"
+    default = "opensc"
 }
 
 variable "aws_region" {
