@@ -11,7 +11,7 @@ awsmfa -i <PROFILE>
 
 ## Verify everything looks good:
 ```bash
-terraform plan -var 'postgres_user=test' -var 'postgres_password=test'
+terraform plan -var 'postgres_user=testuser' -var 'postgres_password=test123$'
 ```
 
 ## Apply the Plan

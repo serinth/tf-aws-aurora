@@ -1,6 +1,7 @@
 resource "aws_rds_cluster" "default" {
   cluster_identifier        = "aurora-cluster-opensc"
   engine                    = "aurora-postgresql"
+  engine_version            = "10.4"
   database_name             = "opensc_db"
   master_username           = "${var.postgres_user}"
   master_password           = "${var.postgres_password}"
