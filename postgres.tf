@@ -19,7 +19,7 @@ resource "aws_rds_cluster_instance" "cluster_instances" {
 resource "aws_db_subnet_group" "aurora" {
   name        = "db-private-subnet"
   description = "Private subnets for RDS instance"
-  subnet_ids  = [ "${aws_subnet.private_rds_1.id}", "${aws_subnet.private_rds_2.id}" ]
+  subnet_ids  = [ "${aws_subnet.private_app_1.id}", "${aws_subnet.private_app_2.id}" ]
   tags = {
       Namespace = "${var.namespace}"
   }
