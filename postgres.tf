@@ -1,7 +1,7 @@
 resource "aws_rds_cluster" "default" {
   cluster_identifier        = "aurora-cluster-opensc"
   engine                    = "aurora-postgresql"
-  engine_version            = "10.4"
+  engine_version            = "9.6.8"
   database_name             = "opensc_db"
   master_username           = "${var.postgres_user}"
   master_password           = "${var.postgres_password}"
@@ -19,12 +19,9 @@ resource "aws_rds_cluster_instance" "cluster_instances" {
 resource "aws_db_subnet_group" "aurora" {
   name        = "db-private-subnet"
   description = "Private subnets for RDS instance"
-  subnet_ids  = [ "${aws_subnet.private.*.id}" ]
+  subnet_ids  = [ "${aws_subnet.private_rds_1.id}", "${aws_subnet.private_rds_2.id}" ]
   tags = {
       Namespace = "${var.namespace}"
   }
 }
 
-output "cluster_address" {
-    value = "${aws_rds_cluster.default.endpoint}"
-}

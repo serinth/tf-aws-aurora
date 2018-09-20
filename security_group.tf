@@ -2,7 +2,7 @@ resource "aws_security_group" "access_via_nat" {
   count = "${local.nat_instance ? 1 : 0}"
   name = "Access to nat instance"
   description = "Access to internet via nat instance for private nodes"
-  vpc_id = "${aws_vpc.project.id}"
+  vpc_id = "${aws_vpc.default.id}"
 
   # outbound internet access
   egress {
